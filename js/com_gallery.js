@@ -21,6 +21,8 @@
             columnWidth: 200,
             itemSelector: 'div.item'
           });
+
+          console.log($container);
     })
   });
   }

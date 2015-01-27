@@ -12,7 +12,7 @@
 <?php endif; ?>
 <div class="autopager">
 	<?php foreach ($rows as $id => $row): ?>
-	  <div<?php if ($classes_array[$id]) { print ' class=" item box' . $classes_array[$id] .'"';  } ?>>
+	  <div<?php if ($classes_array[$id]) { print ' class=" item box ' . $classes_array[$id] .'"';  } ?>>
 	    <?php print $row; ?>
 	  </div>
 	<?php endforeach; ?>

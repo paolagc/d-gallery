@@ -17,12 +17,7 @@ function com_gallery_ctools_plugin_api($module = NULL, $api = NULL) {
  * Implements hook_views_api().
  */
 function com_gallery_views_api($module = NULL, $api = NULL) {
-  $path = drupal_get_path('module', 'com_gallery');
-  return array(
-    'api' => 3,
-    'path' => $path,
-    'template path' => $path . '/templates' ,
-  );
+  return array("api" => "3.0");
 }
 
 /**

@@ -85,7 +85,7 @@ function com_gallery_field_default_field_instances() {
       'max_filesize' => '',
       'max_resolution' => '',
       'min_resolution' => '',
-      'title_field' => 0,
+      'title_field' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -130,7 +130,7 @@ function com_gallery_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'title_fetch' => 0,
-      'title_field' => 0,
+      'title_field' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -174,7 +174,7 @@ function com_gallery_field_default_field_instances() {
     'label' => 'Video',
     'required' => 0,
     'settings' => array(
-      'description_field' => 0,
+      'description_field' => 1,
       'description_length' => 128,
       'user_register_form' => FALSE,
     ),

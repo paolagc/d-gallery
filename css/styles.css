@@ -1,9 +1,17 @@
-.item {
- 	width: 25%;
-}
 
-box{
+.box{
 	padding: 5px;
 	margin: 5px;
-	box-shadow: 5px 5px 5px #eee;
+	border: solid 1px #eee;
+}
+
+.box:after,.box:before{
+	transform: rotate(-3deg);
+	-o-transform: rotate(-3deg);
+	-ms-transform: rotate(-3deg);
+	-moz-transform: rotate(-3deg);
+	-webkit-transform: rotate(-3deg);
+	box-shadow: 0 15px 10px #999;
+	-moz-box-shadow: 0 15px 10px #999;
+	-webkit-box-shadow: 0 15px 10px #999;
 }
