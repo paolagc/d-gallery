@@ -25,59 +25,5 @@ function com_gallery_registry_alter(&$theme_registry) {
   $theme_registry['search_results']['template'] = 'search-results';
 }
 
-/**
-* Implements hook_views_api().
-*
-* Enabling using templates inside module
-*/
-function com_gallery_views_api() {
-  dpm('com_gallery_views_api');
-  $path = drupal_get_path('module', 'com_gallery');
-  return array(
-    'api' => 3,
-    'path' => $path,
-    'template path' => $path . '/templates' ,
-  );
-}
-/**
- *  Implements of hook_menu()
- */
-function com_gallery_menu() {
-  $items['rsvp/%ctools_js/%'] = array(
-      'title' => 'RSVP',
-      'page arguments' => array(1, 2),
-      'page callback' => 'com_gallery_rsvp_page',
-      'access callback' => TRUE,
-      'type' => MENU_NORMAL_ITEM,
-  );
-  return $items;
-}
 
-/**
- * A modal static page callback.
- * @param $js
- *   boolean CTools determination whether the user's browser is javascript enabled.
- * @param $nid
- *   string The node ID of passed as an argument from the hook_menu() path
- * @return
- *   string The contents of the node, that will fill the modal window.
- */
-function com_gallery_rsvp_page($js = NULL, $nid = NULL) {
-  if ($nid == NULL) {
-    // You can customize the string below, or use a drupal_goto() to
-    // send the user to a custom error page.
-    return 'No node id was sent. Error.';
-  }
-  if ($js) {
-    // Required includes for ctools to work:
-    ctools_include('modal');
-    ctools_include('ajax');
-  }
-  // Load the node obkect
-  $node = node_load($nid);
-  $entity_id;
-  $content = entity_view('rsvp_event', array( $entity_id => entity_load('rsvp_event', $entity_id)), 'full');
-
-   return ctools_modal_render('RSVP: '.$node->title, $contents) ;
-}
 
